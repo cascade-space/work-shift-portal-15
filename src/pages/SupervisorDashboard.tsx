@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -94,7 +93,7 @@ const SupervisorDashboard: React.FC = () => {
       return;
     }
 
-    // Create new assignment
+    // Create new assignment - remove 'completed' as it's handled by the addAssignment function
     addAssignment({
       employeeId: parseInt(formData.employeeId),
       employeeName: employee.name,
@@ -103,8 +102,7 @@ const SupervisorDashboard: React.FC = () => {
       size: formData.size,
       machineNo: formData.machineNo,
       process: formData.process,
-      targetQty: parseInt(formData.targetQty),
-      completed: false
+      targetQty: parseInt(formData.targetQty)
     });
 
     // Update local state

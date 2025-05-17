@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth, User } from '@/contexts/AuthContext';
 
-// Mock users for demonstration
-const MOCK_USERS = [
+// Mock users for demonstration - ensuring role is properly typed as UserRole
+const MOCK_USERS: User[] = [
   { username: 'admin', password: 'admin123', role: 'Admin' },
   { username: 'supervisor', password: 'super123', role: 'Supervisor' },
   { username: 'employee1', password: 'emp123', role: 'Employee', id: 1, name: 'John Smith' },
