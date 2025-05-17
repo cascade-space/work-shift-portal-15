@@ -11,6 +11,7 @@ import { ProductionProvider } from "./contexts/ProductionContext";
 import LoginPage from "./pages/LoginPage";
 import AdminDashboard from "./pages/AdminDashboard";
 import SupervisorDashboard from "./pages/SupervisorDashboard";
+import ProductionReports from "./pages/ProductionReports";
 import EmployeeDashboard from "./pages/EmployeeDashboard";
 import EmployeeTasks from "./pages/EmployeeTasks";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/login" element={<LoginPage />} />
               <Route path="/dashboard" element={<DashboardRouter />} />
               <Route path="/assign" element={<SupervisorDashboard />} />
+              <Route path="/reports" element={<ProductionReports />} />
               <Route path="/tasks" element={<EmployeeTasks />} />
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
               <Route path="/" element={<Navigate to="/login" replace />} />

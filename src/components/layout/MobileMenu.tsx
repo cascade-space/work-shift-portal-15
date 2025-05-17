@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { Menu, X, LayoutDashboard, ClipboardList, LogOut } from "lucide-react";
+import { Menu, X, LayoutDashboard, ClipboardList, LogOut, FileText } from "lucide-react";
 
 const MobileMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +39,13 @@ const MobileMenu: React.FC = () => {
         name: 'Assign Tasks',
         path: '/assign',
         icon: <ClipboardList className="w-5 h-5 mr-2" />,
+        roles: ['Supervisor']
+      });
+      
+      items.push({
+        name: 'Production Reports',
+        path: '/reports',
+        icon: <FileText className="w-5 h-5 mr-2" />,
         roles: ['Supervisor']
       });
     }

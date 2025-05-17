@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { useAuth } from '@/contexts/AuthContext';
-import { LayoutDashboard, ClipboardList, Users } from "lucide-react";
+import { LayoutDashboard, ClipboardList, Users, FileText } from "lucide-react";
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
@@ -29,6 +29,13 @@ const Sidebar: React.FC = () => {
         name: 'Assign Tasks',
         path: '/assign',
         icon: <ClipboardList className="w-5 h-5 mr-2" />,
+        roles: ['Supervisor']
+      });
+      
+      items.push({
+        name: 'Production Reports',
+        path: '/reports',
+        icon: <FileText className="w-5 h-5 mr-2" />,
         roles: ['Supervisor']
       });
     }
