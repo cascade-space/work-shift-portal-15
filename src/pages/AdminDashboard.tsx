@@ -189,7 +189,7 @@ const AdminDashboard: React.FC = () => {
                     <SelectValue placeholder="All Shifts" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Shifts</SelectItem>
+                    <SelectItem value="all-shifts">All Shifts</SelectItem>
                     <SelectItem value="Morning">Morning</SelectItem>
                     <SelectItem value="Evening">Evening</SelectItem>
                     <SelectItem value="Night">Night</SelectItem>
@@ -207,7 +207,7 @@ const AdminDashboard: React.FC = () => {
                     <SelectValue placeholder="All Machines" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Machines</SelectItem>
+                    <SelectItem value="all-machines">All Machines</SelectItem>
                     {machineOptions.map(machine => (
                       <SelectItem key={machine} value={machine}>{machine}</SelectItem>
                     ))}
