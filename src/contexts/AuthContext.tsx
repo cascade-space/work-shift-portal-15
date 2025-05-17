@@ -5,6 +5,7 @@ type UserRole = 'Admin' | 'Supervisor' | 'Employee';
 
 export interface User {
   username: string;
+  password: string; // Added password property to the User interface
   role: UserRole;
   id?: number;
   name?: string;
@@ -33,8 +34,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = (userData: User) => {
-    localStorage.setItem('productionSystemUser', JSON.stringify(userData));
-    setUser(userData);
+    // Create a sanitized user object without the password before storing
+    const { password, ...userWithoutPassword } = userData;
+    const sanitizedUser = { ...userWithoutPassword, password: '' };
+    
+    localStorage.setItem('productionSystemUser', JSON.stringify(sanitizedUser));
+    setUser(sanitizedUser as User);
     setIsAuthenticated(true);
   };
 
