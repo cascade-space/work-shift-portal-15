@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  base: "/Production_portal/",
+  base: "/work-shift-portal-15/",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'), // Maps @ to src folder
